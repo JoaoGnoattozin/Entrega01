@@ -4,30 +4,55 @@ Reservation menu
 Sistema de Reservas de Restaurante
 Este projeto é um sistema de gerenciamento de reservas para um restaurante, desenvolvido como parte do Projeto Integrador do 3º período do curso de ADS da Uniamérica Descomplica. O sistema permite que os usuários façam, cancelem e listem reservas de mesas, aplicando conceitos de Programação Orientada a Objetos (POO).
 
-Funcionalidades
+# Sistema de Reservas de Restaurante
+
+Este projeto é um sistema de gerenciamento de reservas para um restaurante, desenvolvido como parte do **Projeto Integrador** do 3º período do curso de Análise e Desenvolvimento de Sistemas (ADS) da Uniamérica Descomplica. O sistema permite que os usuários façam, cancelem e listem reservas de mesas, aplicando conceitos de **Programação Orientada a Objetos (POO)**.
+
+---
+
+## Funcionalidades
+
 O sistema oferece as seguintes funcionalidades:
 
-Fazer Reserva:
+1. **Fazer Reserva**:
+   - Cadastrar um cliente (nome e telefone).
+   - Escolher uma mesa disponível (número entre 1 e 10).
+   - Definir um horário para a reserva.
+   - Validação de telefone (11 dígitos) e número da mesa (1 a 10).
 
-Cadastrar um cliente.
+2. **Cancelar Reserva**:
+   - Cancelar por número da mesa ou nome do cliente.
+   - Liberar a mesa para novas reservas.
 
-Escolher uma mesa disponível.
+3. **Listar Reservas**:
+   - Visualizar todas as reservas feitas, com detalhes como cliente, mesa e horário.
 
-Definir um horário para a reserva.
+4. **Sair**:
+   - Encerrar o programa.
 
-Cancelar Reserva:
+---
 
-Remover uma reserva existente.
+## Tecnologias e Conceitos Utilizados
 
-Liberar a mesa para novas reservas.
+- **Linguagem de Programação**: Java.
+- **Conceitos de POO**:
+  - Classes e Objetos.
+  - Encapsulamento (atributos privados e métodos GET/SET).
+  - Construtores (padrão, parametrizado e de cópia).
+  - Herança e Polimorfismo (classe abstrata e métodos sobrescritos).
+  - Composição (uma classe contendo outra como atributo).
+  - Interfaces.
+- **Estruturas de Dados**: `ArrayList` para armazenar reservas.
+- **Interação com o Usuário**: Menu interativo no console usando `Scanner`.
 
-Listar Reservas:
+---
 
-Visualizar todas as reservas feitas, com detalhes como cliente, mesa e horário.
+## Pré-requisitos
 
-Sair:
+- **Java Development Kit (JDK)**: Versão 11 ou superior.
+- **IDE ou Editor de Texto**: Recomenda-se IntelliJ IDEA, Eclipse ou VS Code.
 
-Encerrar o programa.
+---
 
 O projeto está organizado da seguinte forma:
 reservas-restaurante/
