@@ -6,7 +6,7 @@ public class Reserva {
     // Construtores
     public Reserva() {} // Construtor padrão
 
-    public Reserva(Cliente cliente, Mesa mesa, String horario) { // Construtor parametrizado
+    public Reserva(Cliente cliente, Mesa mesa, String horario) {
         this.cliente = cliente;
         this.mesa = mesa;
         this.horario = horario;
