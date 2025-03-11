@@ -6,7 +6,7 @@ public class Mesa {
     // Construtores
     public Mesa() {} // Construtor padrão
 
-    public Mesa(int numero, int capacidade) { // Construtor parametrizado
+    public Mesa(int numero, int capacidade) {
         if (numero < 1 || numero > 10) {
             throw new IllegalArgumentException("Número da mesa deve estar entre 1 e 10.");
         }
@@ -47,5 +47,10 @@ public class Mesa {
 
     public void setOcupada(boolean ocupada) {
         this.ocupada = ocupada;
+    }
+
+    // Método comum
+    public void exibirDetalhes() {
+        System.out.println("Mesa " + numero + " | Capacidade: " + capacidade);
     }
 }
