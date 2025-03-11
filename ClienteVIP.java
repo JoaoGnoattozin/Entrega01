@@ -1,25 +1,25 @@
-public class MesaVIP extends Mesa {
-    private boolean temVistaExclusiva;
+public class ClienteVIP extends Cliente {
+    private double desconto;
 
     // Construtor
-    public MesaVIP(int numero, int capacidade, boolean temVistaExclusiva) {
-        super(numero, capacidade); // Chama o construtor da superclasse
-        this.temVistaExclusiva = temVistaExclusiva;
+    public ClienteVIP(String nome, String telefone, double desconto) {
+        super(nome, telefone); // Chama o construtor da superclasse
+        this.desconto = desconto;
     }
 
     // Getter e Setter específico
-    public boolean isTemVistaExclusiva() {
-        return temVistaExclusiva;
+    public double getDesconto() {
+        return desconto;
     }
 
-    public void setTemVistaExclusiva(boolean temVistaExclusiva) {
-        this.temVistaExclusiva = temVistaExclusiva;
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
     }
 
     // Sobrescreve o método da superclasse
     @Override
     public void exibirDetalhes() {
         super.exibirDetalhes(); // Chama o método da superclasse
-        System.out.println("Vista Exclusiva: " + (temVistaExclusiva ? "Sim" : "Não"));
+        System.out.println("Desconto VIP: " + desconto + "%");
     }
 }
