@@ -1,6 +1,3 @@
-Aqui está um exemplo de como você pode atualizar o arquivo **README.md** para o projeto de sistema de reservas de restaurante, incluindo as informações sobre o uso de `LocalDateTime` para o horário da reserva e outras melhorias:
-
----
 
 # Sistema de Reservas de Restaurante
 
@@ -138,17 +135,3 @@ O projeto é composto pelas seguintes classes:
    - Enviar lembretes de reservas por e-mail ou SMS.
 
 ---
-
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests com melhorias ou correções.
-
----
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-Este **README.md** atualizado reflete as melhorias no código, como o uso de `LocalDateTime` para o horário da reserva e as validações adicionais. Ele também fornece instruções claras sobre como executar o projeto e sugere melhorias futuras.
