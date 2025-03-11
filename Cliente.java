@@ -5,7 +5,7 @@ public class Cliente {
     // Construtores
     public Cliente() {} // Construtor padrão
 
-    public Cliente(String nome, String telefone) { // Construtor parametrizado
+    public Cliente(String nome, String telefone) {
         this.nome = nome;
         this.setTelefone(telefone); // Usa o setter para validar o telefone
     }
@@ -33,5 +33,10 @@ public class Cliente {
             throw new IllegalArgumentException("Telefone deve conter 11 dígitos.");
         }
         this.telefone = telefone;
+    }
+
+    // Método comum a todos os clientes
+    public void exibirDetalhes() {
+        System.out.println("Cliente: " + nome + " | Telefone: " + telefone);
     }
 }
