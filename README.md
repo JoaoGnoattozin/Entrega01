@@ -1,137 +1,94 @@
+# Sistema de Reservas de Restaurante com Java Swing
 
-# Sistema de Reservas de Restaurante
+Este projeto é um sistema completo de reservas para restaurantes, desenvolvido em Java com interface gráfica Swing. Ele permite que clientes façam reservas de mesas, cancelem reservas existentes e visualizem informações sobre disponibilidade, seguindo os princípios de POO e boas práticas de desenvolvimento.
 
-Este projeto é um sistema de reservas para um restaurante, desenvolvido em Java. Ele permite que os clientes façam reservas de mesas, cancelem reservas e listem as reservas existentes. O sistema foi projetado seguindo os princípios da Programação Orientada a Objetos (POO), como encapsulamento e composição.
+## 📋 Funcionalidades Principais
 
----
+### 🖥️ Interface Gráfica Intuitiva
+- **Sistema baseado em abas** para fácil navegação
+- **Formulários validados** para entrada de dados segura
+- **Tabelas interativas** para visualização de informações
 
-## Funcionalidades
+### ✨ Funcionalidades do Sistema
+1. **📅 Fazer Reservas**:
+   - Cadastro de clientes (Regulares e VIP)
+   - Seleção de mesas disponíveis
+   - Agendamento com data/hora específica
+   - Validação de conflitos de horários
 
-1. **Fazer Reserva**:
-   - O cliente informa seu nome, telefone, número da mesa e horário da reserva.
-   - O horário da reserva é validado e armazenado usando a classe `LocalDateTime`.
-   - A mesa é marcada como ocupada após a reserva ser feita.
+2. **❌ Cancelamento de Reservas**:
+   - Busca por número da mesa ou nome do cliente
+   - Liberação automática da mesa após cancelamento
 
-2. **Cancelar Reserva**:
-   - O cliente pode cancelar uma reserva pelo número da mesa ou pelo nome do cliente.
-   - A mesa é liberada após o cancelamento.
+3. **🔍 Consultas**:
+   - Listagem completa de todas as reservas
+   - Visualização de mesas disponíveis/ocupadas
+   - Detalhes sobre mesas VIP
 
-3. **Listar Reservas**:
-   - Exibe todas as reservas feitas no restaurante, mostrando o nome do cliente, o número da mesa e o horário da reserva.
+## 🛠️ Tecnologias e Padrões Utilizados
 
-4. **Validações**:
-   - O telefone do cliente deve ter 11 dígitos.
-   - O número da mesa deve estar entre 1 e 10.
-   - O horário da reserva deve estar no formato `dd/MM/yyyy HH:mm`.
+- **Java Swing** para interface gráfica
+- **POO** com herança, encapsulamento e polimorfismo
+- **Validações robustas** em todos os campos
+- **Design Pattern MVC** (Model-View-Controller) implícito
+- **Java Date/Time API** para manipulação de horários
 
----
+## 🖼️ Estrutura do Projeto
 
-## Estrutura do Projeto
+### Classes Principais
 
-O projeto é composto pelas seguintes classes:
+| Classe | Descrição |
+|--------|-----------|
+| `MainFrame` | Janela principal com abas do sistema |
+| `ReservaPanel` | Painel para fazer novas reservas |
+| `CancelarReservaPanel` | Painel para cancelamento de reservas |
+| `ListarReservasPanel` | Painel que mostra todas as reservas |
+| `MesasDisponiveisPanel` | Painel com status das mesas |
 
-1. **Cliente**:
-   - Representa um cliente do restaurante.
-   - Atributos: `nome`, `telefone`.
-   - Validação: O telefone deve ter 11 dígitos.
+### Classes de Modelo (Mantidas do projeto original)
 
-2. **Mesa**:
-   - Representa uma mesa do restaurante.
-   - Atributos: `numero`, `capacidade`, `ocupada`.
-   - Validação: O número da mesa deve estar entre 1 e 10.
+| Classe | Descrição |
+|--------|-----------|
+| `Cliente`/`ClienteVIP` | Representação dos clientes |
+| `Mesa`/`MesaVIP` | Modelagem das mesas do restaurante |
+| `Reserva` | Controle das reservas realizadas |
+| `Restaurante` | Lógica principal do sistema |
 
-3. **Reserva**:
-   - Representa uma reserva feita por um cliente para uma mesa em um horário específico.
-   - Atributos: `cliente`, `mesa`, `horario` (usando `LocalDateTime`).
-
-4. **Restaurante**:
-   - Gerencia as reservas do restaurante.
-   - Implementa a interface `Reservavel`.
-   - Métodos: `fazerReserva`, `cancelarReserva`, `listarReservas`, `buscarReservaPorMesa`, `buscarReservaPorCliente`.
-
-5. **Main**:
-   - Classe principal que controla a interação com o usuário.
-   - Oferece um menu para fazer reservas, cancelar reservas e listar reservas.
-
-6. **Reservavel**:
-   - Interface que define os métodos `fazerReserva` e `cancelarReserva`.
-
----
-
-## Melhorias Implementadas
-
-1. **Uso de `LocalDateTime` para o horário da reserva**:
-   - O horário da reserva agora é armazenado como um objeto `LocalDateTime`, o que permite validação e manipulação mais eficiente de datas e horários.
-   - O formato do horário deve ser `dd/MM/yyyy HH:mm` (ex: `25/10/2023 14:00`).
-
-2. **Validações adicionais**:
-   - O telefone do cliente deve ter exatamente 11 dígitos.
-   - O número da mesa deve estar entre 1 e 10.
-   - O horário da reserva deve seguir o formato especificado.
-
-3. **Encapsulamento**:
-   - Todos os atributos das classes são privados e acessados apenas através de métodos `get` e `set`.
-   - Isso garante que os dados sejam manipulados de forma segura e controlada.
-
----
-
-## Como Executar o Projeto
+## 🚀 Como Executar
 
 1. **Pré-requisitos**:
-   - Java Development Kit (JDK) instalado (versão 8 ou superior).
-   - Um ambiente de desenvolvimento (IDE como IntelliJ, Eclipse ou VS Code) ou terminal.
+   - JDK 8 ou superior
+   - IDE Java (Eclipse, IntelliJ, NetBeans) ou compilador via linha de comando
 
 2. **Compilação e Execução**:
-   - Compile todos os arquivos `.java`:
-     ```bash
-     javac *.java
-     ```
-   - Execute a classe `Main`:
-     ```bash
-     java Main
-     ```
+   ```bash
+   # Compilar todos os arquivos
+   javac *.java
+   
+   # Executar o sistema
+   java Main
+   ```
 
 3. **Uso do Sistema**:
-   - Siga as instruções no menu para fazer reservas, cancelar reservas ou listar reservas.
-   - Insira os dados solicitados, como nome, telefone, número da mesa e horário da reserva.
+   - Navegue entre as abas usando o menu superior
+   - Preencha os formulários com os dados solicitados
+   - Utilize os botões para confirmar ações
 
----
+## 💡 Melhorias Futuras
 
-## Exemplo de Uso
+1. **Banco de Dados**:
+   - Integração com SQLite ou MySQL para persistência
 
-### Fazer uma Reserva
-1. Escolha a opção **1 - Fazer Reserva**.
-2. Insira os dados:
-   - Nome: `João Silva`
-   - Telefone: `11987654321`
-   - Número da mesa: `5`
-   - Horário: `25/10/2023 14:00`
-3. A reserva será feita se os dados forem válidos.
+2. **Novas Funcionalidades**:
+   - Cadastro de cardápio digital
+   - Sistema de pedidos online
+   - Avaliação de clientes
 
-### Cancelar uma Reserva
-1. Escolha a opção **2 - Cancelar Reserva**.
-2. Escolha cancelar por número da mesa ou nome do cliente.
-3. Insira o número da mesa ou o nome do cliente.
-4. A reserva será cancelada se existir.
+3. **Aprimoramentos de UI**:
+   - Temas personalizáveis
+   - Gráficos de ocupação
+   - Exportação de relatórios
 
-### Listar Reservas
-1. Escolha a opção **3 - Listar Reservas**.
-2. Todas as reservas serão exibidas, mostrando o nome do cliente, o número da mesa e o horário.
-
----
-
-## Melhorias Futuras
-
-1. **Persistência de Dados**:
-   - Salvar as reservas em um arquivo ou banco de dados para que não sejam perdidas ao reiniciar o programa.
-
-2. **Interface Gráfica**:
-   - Desenvolver uma interface gráfica (GUI) para facilitar a interação com o usuário.
-
-3. **Autenticação de Usuários**:
-   - Adicionar um sistema de login para clientes e administradores.
-
-4. **Notificações**:
-   - Enviar lembretes de reservas por e-mail ou SMS.
-
----
+4. **Sistema Multiplataforma**:
+   - Versão Web complementar
+   - Aplicativo mobile para clientes
