@@ -18,6 +18,15 @@ public class Restaurante implements Reservavel {
         inicializarMesas();
     }
 
+    // Métodos para acesso às listas (adicionados para o Swing)
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
+
+    public List<Mesa> getMesas() {
+        return mesas;
+    }
+
     /**
      * Inicializa as mesas do restaurante.
      */
@@ -54,10 +63,6 @@ public class Restaurante implements Reservavel {
         Reserva reserva = new Reserva(cliente, mesa, horario);
         reservas.add(reserva);
         mesa.setOcupada(true);
-        
-        System.out.println("Reserva confirmada para " + cliente.getNome() + 
-                         " na mesa " + numeroMesa + 
-                         " às " + horario);
     }
 
     @Override
@@ -68,38 +73,8 @@ public class Restaurante implements Reservavel {
 
         if (reservas.remove(reserva)) {
             reserva.getMesa().setOcupada(false);
-            System.out.println("Reserva cancelada com sucesso.");
         } else {
             throw new IllegalArgumentException("Reserva não encontrada.");
-        }
-    }
-
-    /**
-     * Lista todas as reservas atuais.
-     */
-    public void listarReservas() {
-        if (reservas.isEmpty()) {
-            System.out.println("Nenhuma reserva encontrada.");
-            return;
-        }
-
-        System.out.println("\n--- Lista de Reservas ---");
-        for (Reserva reserva : reservas) {
-            System.out.println("Cliente: " + reserva.getCliente().getNome() +
-                             " | Mesa: " + reserva.getMesa().getNumero() +
-                             " | Horário: " + reserva.getHorarioFormatado());
-        }
-    }
-
-    /**
-     * Lista todas as mesas disponíveis.
-     */
-    public void listarMesasDisponiveis() {
-        System.out.println("\n--- Mesas Disponíveis ---");
-        for (Mesa mesa : mesas) {
-            if (!mesa.isOcupada()) {
-                mesa.exibirDetalhes();
-            }
         }
     }
 
